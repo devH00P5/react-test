@@ -1,17 +1,24 @@
 {
   "files": {
-    "main.css": "/react-test/static/css/main.e1649533.css",
-    "main.js": "/react-test/static/js/main.d96e63ca.js",
+    "main.css": "/react-test/static/css/main.8e2dc5ef.css",
+    "main.js": "/react-test/static/js/main.51903933.js",
     "static/js/453.3257c68d.chunk.js": "/react-test/static/js/453.3257c68d.chunk.js",
     "static/media/restaurant_bg_hero.jpg": "/react-test/static/media/restaurant_bg_hero.87e7096be90e3ce14f03.jpg",
-    "static/media/logo.svg": "/react-test/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/burger_8648590.png": "/react-test/static/media/burger_8648590.0a32725499c38575a3ac.png",
+    "static/media/136529089_a1e4374c-e98e-4b15-a9ec-a2fe7fc511b9.png": "/react-test/static/media/136529089_a1e4374c-e98e-4b15-a9ec-a2fe7fc511b9.661525c2fdcf2c80e178.png",
+    "static/media/136168132_3c42feb1-9d73-4c03-bcdd-a496e59f4994 (1).png": "/react-test/static/media/136168132_3c42feb1-9d73-4c03-bcdd-a496e59f4994 (1).b495f396c77f127afa77.png",
+    "static/media/logo.png": "/react-test/static/media/logo.b63485d5cc0b64ecc465.png",
+    "static/media/slick.svg": "/react-test/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/react-test/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/react-test/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/react-test/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/react-test/index.html",
-    "main.e1649533.css.map": "/react-test/static/css/main.e1649533.css.map",
-    "main.d96e63ca.js.map": "/react-test/static/js/main.d96e63ca.js.map",
+    "main.8e2dc5ef.css.map": "/react-test/static/css/main.8e2dc5ef.css.map",
+    "main.51903933.js.map": "/react-test/static/js/main.51903933.js.map",
     "453.3257c68d.chunk.js.map": "/react-test/static/js/453.3257c68d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e1649533.css",
-    "static/js/main.d96e63ca.js"
+    "static/css/main.8e2dc5ef.css",
+    "static/js/main.51903933.js"
   ]
 }
