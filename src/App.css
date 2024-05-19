@@ -1,38 +1,158 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Gilda+Display&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.hero_wrapper {
+  height: 100dvh;
+  background: rgba(0, 0, 0, 0.7725490196);
+  color: #fff;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  display: flex;
+  place-items: center;
+}
+.hero_wrapper::before {
+  content: " ";
+  width: 100%;
+  background: url("imgs/restaurant_bg_hero.jpg");
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: inherit;
+  z-index: -1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.hero_content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100%;
+  gap: 2rem;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media screen and (max-width: 520px) {
+  .hero_content {
+    gap: 1rem;
   }
 }
+
+.logo {
+  height: 6rem;
+}
+@media screen and (max-width: 520px) {
+  .logo {
+    height: 3rem;
+  }
+}
+.logo img {
+  display: block;
+  width: auto;
+  height: inherit;
+}
+
+.hero_description {
+  text-align: center;
+  width: 50%;
+}
+@media screen and (max-width: 520px) {
+  .hero_description {
+    width: 95%;
+  }
+}
+.hero_description .hero_header {
+  color: #EAB631;
+  font-family: "Gilda Display", "Times New Roman", Times, serif;
+  font-size: 4.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+@media screen and (max-width: 520px) {
+  .hero_description .hero_header {
+    font-size: 3.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+.hero_description .hero_message {
+  font-size: 1.25rem;
+  font-family: "Roboto", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 300;
+}
+@media screen and (max-width: 520px) {
+  .hero_description .hero_message {
+    font-size: 1.05rem;
+  }
+}
+
+.hero_slider {
+  width: 80%;
+}
+.hero_slider .slick-track {
+  width: 100%;
+}
+.hero_slider .hero_slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.hero_slider .hero_slide .hero_slide_img {
+  height: 10rem;
+  width: inherit;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero_slider .hero_slide .hero_slide_img img {
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: inherit;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+.nav_wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  height: 4rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.top_nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: inherit;
+}
+.top_nav svg {
+  height: 20px;
+  width: 40px;
+  stroke-width: 3;
+  stroke: #fff;
+}
+
+button {
+  padding: 0.75rem 3.5rem;
+  outline: none;
+  border: none;
+}
+
+.book_a_table {
+  background-color: #EAB631;
+  font-weight: 700;
+  color: #01462A;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.245);
+  transition: background, color 0.5s;
+}
+.book_a_table:hover {
+  background-color: #01462A;
+  color: #fff;
+  cursor: pointer;
+}/*# sourceMappingURL=App.css.map */
