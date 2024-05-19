@@ -78,10 +78,9 @@ useGSAP(()=>{
                     Welcome
                 </h1>
                 <p className='hero_message' ref={hero_message}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-Temporibus, quaerat porro consequatur odit voluptatibus 
-sint iste quasi eum, fugiat fuga natus molestiae 
-
+                Discover culinary excellence where each dish is a masterpiece, and every bite a symphony of flavors.
+                 Indulge in a dining experience that transcends mere satisfaction, where passion meets plate.
+          
 
                 </p>
 
@@ -131,6 +130,19 @@ sint iste quasi eum, fugiat fuga natus molestiae
       </div>
       
     </Slider>
+
+            </div>
+            <div className='scrl-indicator'>
+              <p className='scrl-description'>
+              Scroll To Discover Culinary Excellence
+              </p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="26" viewBox="0 0 30 26">
+  <g id="p1" data-name="Polygon 1" transform="translate(30 26) rotate(180)" >
+    <path d="M 29.13430023193359 25.5 L 0.8657025098800659 25.5 L 15.00000095367432 1.00054931640625 L 29.13430023193359 25.5 Z" stroke="none"/>
+    <path d="M 15.00000095367432 2.001115798950195 L 1.731414794921875 25 L 28.26858711242676 25 L 15.00000095367432 2.001115798950195 M 15.00000095367432 0 L 30 26 L 1.9073486328125e-06 26 L 15.00000095367432 0 Z" stroke="none" />
+  </g>
+</svg>
+
 
             </div>
             

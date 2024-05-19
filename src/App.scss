@@ -139,6 +139,23 @@ $default-font-white:#fff;
 
     }
 }
+
+.scrl-indicator{
+    position: absolute;
+    bottom: 0;
+
+    svg{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 1rem;
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+        animation: 5s infinite alternate updown;
+       
+        
+    }
+}
 .nav_wrapper{
     position: sticky;
     top: 0;
@@ -158,6 +175,7 @@ $default-font-white:#fff;
         width: 40px;
         stroke-width: 3;
         stroke:$default-font-white ;
+        animation:updown alternate 2s ;
         
     }
 }
@@ -181,4 +199,14 @@ button{
 
     }
 
+}
+
+//animations
+@keyframes updown {
+  
+    to{
+        transform: translateY(5px);
+        fill: $default-font-white;
+    }
+    
 }
