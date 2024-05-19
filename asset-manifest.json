@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-test/static/css/main.7738023e.css",
-    "main.js": "/react-test/static/js/main.f4a160dd.js",
+    "main.css": "/react-test/static/css/main.5a900a4d.css",
+    "main.js": "/react-test/static/js/main.1146dac4.js",
     "static/js/453.3257c68d.chunk.js": "/react-test/static/js/453.3257c68d.chunk.js",
     "static/media/restaurant_bg_hero.jpg": "/react-test/static/media/restaurant_bg_hero.87e7096be90e3ce14f03.jpg",
     "static/media/burger_8648590.png": "/react-test/static/media/burger_8648590.0a32725499c38575a3ac.png",
@@ -13,12 +13,12 @@
     "static/media/slick.ttf": "/react-test/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/react-test/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/react-test/index.html",
-    "main.7738023e.css.map": "/react-test/static/css/main.7738023e.css.map",
-    "main.f4a160dd.js.map": "/react-test/static/js/main.f4a160dd.js.map",
+    "main.5a900a4d.css.map": "/react-test/static/css/main.5a900a4d.css.map",
+    "main.1146dac4.js.map": "/react-test/static/js/main.1146dac4.js.map",
     "453.3257c68d.chunk.js.map": "/react-test/static/js/453.3257c68d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7738023e.css",
-    "static/js/main.f4a160dd.js"
+    "static/css/main.5a900a4d.css",
+    "static/js/main.1146dac4.js"
   ]
 }
