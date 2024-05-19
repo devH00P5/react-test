@@ -26,8 +26,8 @@ export default  function Home() {
 const hero_message =useRef();
 const hero_header=useRef()
 useGSAP(()=>{
-    gsap.from(hero_message.current,{opacity:0,duration:6,delay:6})
-    gsap.from(hero_header.current,{y:'-100px',opacity:0,duration:6})
+    gsap.from(hero_message.current,{opacity:0,duration:4,delay:4})
+    gsap.from(hero_header.current,{y:'-100px',opacity:0,duration:4})
 })
 //Slick settings
         const settings = {
