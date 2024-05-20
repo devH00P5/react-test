@@ -179,19 +179,23 @@ $default-font-grey:#4e4e4e;
         }
     }
     .drawer-b{
-        width: 100%;
+        width: 20%;
         height: calc(100dvh - 4rem );
         position: fixed;
         background-color: rgba(0, 0, 0, 0.958);
-        left: -100%;
+        left: -20%;
         bottom: 0;
         z-index: 1031;
         transition: 1s ease;
+        @media screen and (max-width:540px) {
+            left: -100%;
+            width: 100%;
+        }
        
         ul{
            // border: 1px solid white;
-            margin: none;
-            padding: none;
+            margin: 0;
+            padding: 0;
             text-align: center;
             list-style: none;
             li{
@@ -204,6 +208,14 @@ $default-font-grey:#4e4e4e;
             a{
                 text-decoration: none;
                 color: $default-font-white;
+                &:hover{
+                    li{
+                        background-color: $primary-theme-color;
+                    color: $secondary-theme-color;
+                    }
+                    
+                }
+
             }
         }
 

@@ -18,7 +18,7 @@ export default function Nav () {
     <input type='checkbox' id='drawer'/>
     <div className='drawer-b'>
       <ul>
-        <li><Link to='/home'>HOME</Link></li>
+       <Link to='/home'> <li>HOME</li></Link>
       </ul>
 
     </div>

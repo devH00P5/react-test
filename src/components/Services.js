@@ -37,7 +37,7 @@ function Services(props) {
                 </div>
                 <div className='menu_desc'>
                   <p className='menu_name'>Choose from our available menu </p>
-                  <p >GHC <span className='price'>50.00</span></p>
+                  <p >£ <span className='price'>50.00</span></p>
                   <p><button>+</button></p>
                   
 
@@ -51,7 +51,7 @@ function Services(props) {
                 </div>
                 <div className='menu_desc'>
                   <p className='menu_name'>Choose from our available menu </p>
-                  <p >GHC <span className='price'>50.00</span></p>
+                  <p >£ <span className='price'>50.00</span></p>
                   <p><button>+</button></p>
                   
 
@@ -65,7 +65,7 @@ function Services(props) {
                 </div>
                 <div className='menu_desc'>
                   <p className='menu_name'>Choose from our available menu </p>
-                  <p >GHC <span className='price'>50.00</span></p>
+                  <p >£ <span className='price'>50.00</span></p>
                   <p><button>+</button></p>
                   
 
