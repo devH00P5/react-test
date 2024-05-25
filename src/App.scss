@@ -8,7 +8,9 @@ $default-font-grey:#4e4e4e;
     margin:0;
     box-sizing: border-box;
 }
-
+.mg-t-1{
+    margin-top: 1rem;
+}
 .hero_wrapper{
     height: calc(100dvh - 3.8rem);
      background: #000000c5;
@@ -253,6 +255,45 @@ button{
     }
 
 }
+
+.order_button{
+    position: fixed;
+    bottom: 3rem;
+    right: 1rem;
+    border-radius: 50%;
+    background: $secondary-theme-color;
+    opacity: .8;
+    height: 4rem;
+    width: 4rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px 1px 1px #9b9b9b;
+    p{
+        position: absolute;
+        top: 0;
+        background-color: $primary-theme-color;
+        color: $default-font-white;
+        min-width: 1rem;
+        min-height: 1rem;
+        border-radius: 50%;
+        text-align: center;
+        font-size: .8rem;
+        padding: .1rem;
+    }
+    button{
+        background: none;
+        svg{
+            width: 2rem;
+            height: 2rem;
+            stroke-width: 1rem;
+            fill: $primary-theme-color;
+        }
+        
+    }
+
+}
 .one-pg{
     //height: 100dvh;
     
@@ -491,8 +532,54 @@ button{
     gap: 1rem;
     @media screen and (max-width:540px) {
         flex-direction: column;
+    
         
     }
+}
+.menu-pg{
+    flex-wrap: wrap;
+    @media screen and (max-width:540px) {
+        flex-direction: row !important;
+        gap: unset;
+        justify-content: space-around;
+        
+    }
+    .menu_card{
+        @media screen and (max-width:540px) {
+         width: calc((100% / 2) - 1rem);
+           
+         .menu_desc{
+        .default-btn{
+            button{
+             font-size: .7rem;
+            }
+            
+        } 
+         .menu_name{
+        color: $default-font-grey;
+        font-weight: 400;
+    }
+    }
+  
+        }
+     
+    }
+    .menu_img{
+        @media screen and (max-width:540px) {
+           height: 3rem !important;
+               
+           }
+
+        
+    }
+    .menu_name{
+        @media screen and (max-width:540px) {
+           
+               font-size: .9rem;
+           }
+        
+    }  
+    
 }
 .menu_card{
     display: flex;
@@ -500,6 +587,7 @@ button{
     background-color: #eaeaea53;
     box-shadow: .5px .5px   2px #d5d5d5;
     padding: 1rem;
+    gap: .5rem;
     .menu_img{
        text-align: center;
        height: 150px;
@@ -542,6 +630,92 @@ button{
 
             }
         }
+        .default-btn{
+            button{
+                background: $secondary-theme-color;
+                padding: 0.5rem 1rem;
+                border-radius: unset;
+                font-size: 1rem;
+                color: $primary-theme-color;
+                transition: all 1s ease;
+                &:hover{
+                    cursor: pointer;
+                    background-color: $primary-theme-color;
+                    color: $secondary-theme-color;
+    
+                }
+            }
+        }
+    }
+
+}
+
+.menu_card-2{
+    border-radius: 5px;
+    box-shadow: 1px 1px 7px #bebebe;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    padding: 1rem;
+    .menu-img{
+        height: 10rem;
+        img{
+            height: inherit;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    .menu-desc{
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        .menu-name{
+            font-weight: 700;
+            text-align: center;
+        }
+        .subtitle{
+            padding-left: .5rem;
+            font-weight: 600;
+        }
+        .opt-container{
+            display: flex;
+            flex-wrap: wrap;
+            gap: .5rem;
+            button{
+                padding-left: 0.5rem;
+                padding-right: .5rem;
+                display: inline-block;
+                background: $secondary-theme-color;
+                color: $primary-theme-color;
+                font-weight: 600;
+                box-shadow: 1px 1px 2px #9b9b9b;
+            }
+        }
+        .button-t2{
+            button{
+            padding-left: 0.5rem;
+            padding-right: .5rem;
+            display: inline-block;
+            background: $primary-theme-color;
+            color: $secondary-theme-color;
+            font-weight: 600;
+            }
+        }
+        hr{
+            width: 95%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .add_order{
+            button{
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+            }
+        }
+
     }
 
 }
@@ -565,7 +739,9 @@ button{
 .itms_3{
     width: calc(100% / 3 );
     @media screen and (max-width:540px) {
-        width: 100%;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
         
     }
 

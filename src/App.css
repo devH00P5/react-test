@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+.mg-t-1 {
+  margin-top: 1rem;
+}
+
 .hero_wrapper {
   height: calc(100dvh - 3.8rem);
   background: rgba(0, 0, 0, 0.7725490196);
@@ -212,6 +216,43 @@ button {
   cursor: pointer;
 }
 
+.order_button {
+  position: fixed;
+  bottom: 3rem;
+  right: 1rem;
+  border-radius: 50%;
+  background: #EAB631;
+  opacity: 0.8;
+  height: 4rem;
+  width: 4rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1px 1px 1px #9b9b9b;
+}
+.order_button p {
+  position: absolute;
+  top: 0;
+  background-color: #01462A;
+  color: #fff;
+  min-width: 1rem;
+  min-height: 1rem;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 0.8rem;
+  padding: 0.1rem;
+}
+.order_button button {
+  background: none;
+}
+.order_button button svg {
+  width: 2rem;
+  height: 2rem;
+  stroke-width: 1rem;
+  fill: #01462A;
+}
+
 .one-pg {
   margin-top: 2rem;
 }
@@ -414,12 +455,46 @@ button {
   }
 }
 
+.menu-pg {
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 540px) {
+  .menu-pg {
+    flex-direction: row !important;
+    gap: unset;
+    justify-content: space-around;
+  }
+}
+@media screen and (max-width: 540px) {
+  .menu-pg .menu_card {
+    width: calc(50% - 1rem);
+  }
+  .menu-pg .menu_card .menu_desc .default-btn button {
+    font-size: 0.7rem;
+  }
+  .menu-pg .menu_card .menu_desc .menu_name {
+    color: #4e4e4e;
+    font-weight: 400;
+  }
+}
+@media screen and (max-width: 540px) {
+  .menu-pg .menu_img {
+    height: 3rem !important;
+  }
+}
+@media screen and (max-width: 540px) {
+  .menu-pg .menu_name {
+    font-size: 0.9rem;
+  }
+}
+
 .menu_card {
   display: flex;
   flex-direction: column;
   background-color: rgba(234, 234, 234, 0.3254901961);
   box-shadow: 0.5px 0.5px 2px #d5d5d5;
   padding: 1rem;
+  gap: 0.5rem;
 }
 .menu_card .menu_img {
   text-align: center;
@@ -461,6 +536,83 @@ button {
   background-color: #01462A;
   color: #EAB631;
 }
+.menu_card .menu_desc .default-btn button {
+  background: #EAB631;
+  padding: 0.5rem 1rem;
+  border-radius: unset;
+  font-size: 1rem;
+  color: #01462A;
+  transition: all 1s ease;
+}
+.menu_card .menu_desc .default-btn button:hover {
+  cursor: pointer;
+  background-color: #01462A;
+  color: #EAB631;
+}
+
+.menu_card-2 {
+  border-radius: 5px;
+  box-shadow: 1px 1px 7px #bebebe;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+.menu_card-2 .menu-img {
+  height: 10rem;
+}
+.menu_card-2 .menu-img img {
+  height: inherit;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.menu_card-2 .menu-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.menu_card-2 .menu-desc .menu-name {
+  font-weight: 700;
+  text-align: center;
+}
+.menu_card-2 .menu-desc .subtitle {
+  padding-left: 0.5rem;
+  font-weight: 600;
+}
+.menu_card-2 .menu-desc .opt-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.menu_card-2 .menu-desc .opt-container button {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  display: inline-block;
+  background: #EAB631;
+  color: #01462A;
+  font-weight: 600;
+  box-shadow: 1px 1px 2px #9b9b9b;
+}
+.menu_card-2 .menu-desc .button-t2 button {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  display: inline-block;
+  background: #01462A;
+  color: #EAB631;
+  font-weight: 600;
+}
+.menu_card-2 .menu-desc hr {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.menu_card-2 .menu-desc .add_order button {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
 
 .discover-more {
   margin-top: 1.5rem;
@@ -483,7 +635,9 @@ button {
 }
 @media screen and (max-width: 540px) {
   .itms_3 {
-    width: 100%;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
