@@ -1,9 +1,30 @@
-import React from 'react'
+import React , { useState } from 'react'
 import burger from '../imgs/burger_8648590.png';
 import OrdersList from './Buttons/OrdersList';
 
 export default function MenusList() {
 
+    //orders
+    const [ordersList, setordersList] = useState([]);
+
+    const addOrder=(menu)=>{
+
+        if(ordersList.length > 0){ 
+            
+            if((ordersList.findIndex(e=>e.id===menu.id))<0){
+             setordersList((prev)=>[...prev,menu])
+        }
+        }
+        else{
+            setordersList((prev)=>[...prev,menu])
+
+        }
+       
+       
+
+    }
+
+    //menu
     const menuList=[
         {
             id:1,
@@ -53,7 +74,7 @@ export default function MenusList() {
                 <div className='menu_desc'>
                   <p className='menu_name'>{menu.name}</p>
                   <p >£ <span className='price'>{menu.price}</span></p>
-                  <p className='default-btn'><button>Add to Orders</button></p>
+                  <p className='default-btn' ><button onClick={()=>addOrder(menu)}>Add to Orders</button></p>
                   
 
                 </div>
@@ -66,7 +87,7 @@ export default function MenusList() {
             })
         } 
         </div>
-        <OrdersList />
+        <OrdersList orderSize={ordersList.length}/>
     </div>
   )
 }

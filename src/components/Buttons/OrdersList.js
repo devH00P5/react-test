@@ -1,6 +1,8 @@
 import React from 'react';
 
-const OrdersList = () => {
+const OrdersList = (props) => {
+  
+
     return (
         <div className='order_button'>
             <button  onClick={()=>{console.log("show Orders")}}>
@@ -24,7 +26,7 @@ const OrdersList = () => {
 </svg>
 
             </button>
-            <p>0</p>
+            <p>{props.orderSize}</p>
         </div>
     );
 }
