@@ -294,6 +294,34 @@ button{
     }
 
 }
+
+.orders{
+    display: block;
+    position: absolute;   
+}
+
+.orders_t{
+    width: 100%;
+    th,td{
+        color:$default-font-grey;
+        input{
+            width: 30%;
+        }
+        @media screen and (max-width:540px) {
+            font-size: .8rem;
+            
+        }
+    }
+    &{
+        th:first-child{
+            text-align: left;
+        }
+        th:last-child,td:last-child{
+            text-align: right;
+        }
+       
+    }
+}
 .one-pg{
     //height: 100dvh;
     

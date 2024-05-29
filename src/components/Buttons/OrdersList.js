@@ -1,11 +1,23 @@
-import React from 'react';
+import { Box, Modal, Typography } from '@mui/material';
+import React ,{useState} from 'react';
 
 const OrdersList = (props) => {
+
+    const [modalDisplay, setmodalDisplay] = useState(false);
+    const showModal=()=>{
+        setmodalDisplay(true);
+    }
+
+    const hideModal=()=>{
+        setmodalDisplay(false);
+    }
+    
+    
   
 
     return (
         <div className='order_button'>
-            <button  onClick={()=>{console.log("show Orders")}}>
+            <button  onClick={()=>{showModal()}}>
             <svg  version="1.1" id="Capa_1" 
 	 viewBox="0 0 60 60" >
 <g>
@@ -26,7 +38,67 @@ const OrdersList = (props) => {
 </svg>
 
             </button>
-            <p>{props.orderSize}</p>
+            <p>{props.ordersList.length}</p>
+            <div className='orders'>
+
+<Modal
+  open={modalDisplay}
+  onClose={hideModal}
+  aria-labelledby="modal-modal-title"
+  aria-describedby="modal-modal-description"
+>
+  <Box sx={
+
+ {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: '90%',
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+  }
+
+  }>
+    <Typography id="modal-modal-title" variant="h6" component="h5">
+      Your orders  
+    </Typography>
+    <hr />
+    <div>
+        <table className='orders_t'>
+            <tr>
+                <th>Menu Name</th>
+                <th></th>
+                <th>£</th>
+
+            </tr>
+
+       
+        {
+            props.ordersList.map((orderItem, index) => {
+               return(
+                <tr>
+                <td>{orderItem.name}</td>
+                <td><input type='number'  min={1} max={orderItem.max} step={1}/></td>
+                <td>{orderItem.price}</td>
+                </tr>
+               )
+            })
+        }
+         </table>
+         <div className='total_order'>
+            <p>Total: <span></span></p>
+
+         </div>
+
+    </div>
+  </Box>
+</Modal>
+     
+
+            </div>
         </div>
     );
 }

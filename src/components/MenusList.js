@@ -31,6 +31,8 @@ export default function MenusList() {
             name:'Fufu',
             image:burger,
             price:13.00,
+            qty:1,
+            max:10,
             options:['Palmnut Soup','Groundnut Soup','Light Soup'],
             proteins:[{
                 proteinName:'Fish',
@@ -46,6 +48,8 @@ export default function MenusList() {
             name:'Rice Balls',
             options:['Palmnut Soup','Groundnut Soup'],
             price:14.00,
+            qty:1,
+            max:3,
             proteins:[{
                 proteinName:'Fish',
                 Price:5.00
@@ -87,7 +91,7 @@ export default function MenusList() {
             })
         } 
         </div>
-        <OrdersList orderSize={ordersList.length}/>
+        <OrdersList ordersList={ordersList}/>
     </div>
   )
 }

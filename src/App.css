@@ -253,6 +253,32 @@ button {
   fill: #01462A;
 }
 
+.orders {
+  display: block;
+  position: absolute;
+}
+
+.orders_t {
+  width: 100%;
+}
+.orders_t th, .orders_t td {
+  color: #4e4e4e;
+}
+.orders_t th input, .orders_t td input {
+  width: 30%;
+}
+@media screen and (max-width: 540px) {
+  .orders_t th, .orders_t td {
+    font-size: 0.8rem;
+  }
+}
+.orders_t th:first-child {
+  text-align: left;
+}
+.orders_t th:last-child, .orders_t td:last-child {
+  text-align: right;
+}
+
 .one-pg {
   margin-top: 2rem;
 }
