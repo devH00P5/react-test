@@ -7,22 +7,64 @@ export default function MenusList() {
     //orders
     const [ordersList, setordersList] = useState([]);
 
+    const [ordersTotal, setordersTotal] = useState(0.00)
+
+    const [orders, setorders] = useState({
+        selectedMenus:[],
+        lineTotal:[],
+        total:0.00,
+        deliveryType:'',
+
+    });
+    //new code
+    const lineTotal=(price,qty)=>{
+        console.log("updating line Total",price*qty)
+        orders.lineTotal.push(price*qty)
+    }
+
+    //End New
+    const updateTotal=()=>{
+     // orders.total=orders.total+price;
+     // console.log(orders.total)
+     orders.total=orders.lineTotal.reduce((accumulator, currentValue) => {
+        return accumulator+currentValue
+     }, 0.00)
+    }
+
     const addOrder=(menu)=>{
 
         if(ordersList.length > 0){ 
             
             if((ordersList.findIndex(e=>e.id===menu.id))<0){
              setordersList((prev)=>[...prev,menu])
+             //setorders({...orders,['selectedMenus']:ordersList})
+             orders.selectedMenus.push(menu)
+             //New
+             lineTotal(menu.price,menu.qty)
+             //end
+
+             updateTotal()
+             console.log('Order-'+ orders.selectedMenus.length)
+             console.log('OrdersList-'+ ordersList)
         }
         }
         else{
             setordersList((prev)=>[...prev,menu])
+            orders.selectedMenus.push(menu)
+            //New
+            lineTotal(menu.price,menu.qty)
+            //end
+            updateTotal()
+            console.log('Order-'+ orders.selectedMenus.length)
+            console.log('OrdersList-'+ ordersList)
 
         }
        
        
 
     }
+   
+
 
     //menu
     const menuList=[
@@ -31,7 +73,7 @@ export default function MenusList() {
             name:'Fufu',
             image:burger,
             price:13.00,
-            qty:1,
+            qty:2,
             max:10,
             options:['Palmnut Soup','Groundnut Soup','Light Soup'],
             proteins:[{
@@ -91,7 +133,7 @@ export default function MenusList() {
             })
         } 
         </div>
-        <OrdersList ordersList={ordersList}/>
+        <OrdersList ordersList={orders} updateTotal={updateTotal}/>
     </div>
   )
 }

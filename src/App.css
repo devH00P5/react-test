@@ -266,17 +266,45 @@ button {
 }
 .orders_t th input, .orders_t td input {
   width: 30%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 @media screen and (max-width: 540px) {
   .orders_t th, .orders_t td {
     font-size: 0.8rem;
   }
 }
+.orders_t th {
+  text-align: center;
+}
 .orders_t th:first-child {
   text-align: left;
 }
 .orders_t th:last-child, .orders_t td:last-child {
   text-align: right;
+}
+.orders_t label span {
+  color: red !important;
+}
+
+.total_order {
+  text-align: right;
+}
+.total_order span {
+  font-weight: bolder;
+}
+
+@media screen and (max-width: 520px) {
+  .deliveryOptions label {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 520px) {
+  .deliveryOptions input {
+    width: 100%;
+    height: 1.5rem;
+  }
 }
 
 .one-pg {
@@ -358,6 +386,10 @@ button {
   .services_content {
     flex-direction: column;
   }
+}
+
+#fu {
+  font-size: 0.9rem;
 }
 
 .service_img {

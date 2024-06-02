@@ -1,9 +1,25 @@
-import { Box, Modal, Typography } from '@mui/material';
-import React ,{useState} from 'react';
-
+import { Input } from '@mui/icons-material';
+import dayjs from 'dayjs';
+import { TimePicker } from '@mui/x-date-pickers/TimePicker';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { Box, FormControl, FormControlLabel, FormLabel, Modal, Radio, RadioGroup, Typography } from '@mui/material';
+import React ,{useEffect, useState} from 'react';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { ErrorMessage, Field, Form, Formik } from 'formik'
+import * as Yup from 'yup'
 const OrdersList = (props) => {
 
-    const [modalDisplay, setmodalDisplay] = useState(false);
+
+const [temp, settemp] = useState(true);
+const [modalDisplay, setmodalDisplay] = useState(false);
+ //Delivery Mode
+ const [selectedDelivery, setselectedDelivery] = useState('inHouse')
+ 
+ const handleDeliveryChanged=(e)=>{
+    setselectedDelivery(e.target.value)
+    console.log(selectedDelivery)
+    
+ }
     const showModal=()=>{
         setmodalDisplay(true);
     }
@@ -12,10 +28,138 @@ const OrdersList = (props) => {
         setmodalDisplay(false);
     }
     
+    const newLineTotal=(qty,price,index)=>{
+        props.ordersList.selectedMenus[index].qty=qty
+        props.ordersList.lineTotal[index]=(qty*price)
+        props.updateTotal()
+        console.log("looking"+props.ordersList.lineTotal[index])
+        console.log("Total"+props.ordersList.total)
+        console.log("updating... lineTotal ,"+(qty*price))
+        settemp(!temp)
+        
+        
+    }
+    const newOrderTotal=()=>{
+        console.log('updating...orderTotal')
+
+    }
+
+    //pickup templates
+    const delivery=()=> {
+        return(
+    <>
+    <div>
+    <Formik initialValues={{
+                postCode:'',
+                clientAddress:'',
+                guestNumber:1,
+                clientName:'',
+                email:'',
+                phone:'',
+                specialRequest:''
+
+            }} 
+         validationSchema={
+                Yup.object({
+                reservationDate:Yup.date("Please Choose a valid Date for reservation").required('This field is required'),
+                //reservationTime:Yup.time("please choose a valid time for reservation").required("Please choose a time for reservation"),
+                postCode:Yup.string("Please Enter a Number").required("Please Enter Number of Guest"),
+                clientName:Yup.string("Please Enter A Valid Name").required("Name field can't be empty"),
+                clientAddress:Yup.string().required("Please E-mail field can't be empty"),
+                 phone:Yup.number("Please Enter a valid Phone number").required("The Phone field can't be Empty"),
+                specialRequest:Yup.string("")
+            })}  
+            
+            
+        onSubmit={(values, { setSubmitting }) => {
+         setTimeout(() => {
+           alert(JSON.stringify(values, null, 2));
+           setSubmitting(false);
+         }, 400);
+       }}>
+        <Form >
+       
+        
+                     
     
+        
+                        <div className='form-g'>
+                        <label htmlFor='clientName'>Name:</label>
+                            <Field name='clientName'   />
+                            <ErrorMessage name='clientName' />
+
+                        </div>
+                        <div className='form-g'>
+                            <label htmlFor='phone'>Phone</label>
+                            <Field name='phone' type='number' />
+                            <ErrorMessage name='phone' />
+                            
+                        </div>
+         
+                        <div className='form-g'>
+                        <label htmlFor='postCode'>Post Code:</label>
+                            <Field name='postCode'   />
+                            <ErrorMessage name='postCode' />
+
+                        </div>
+                        <div className='form-g'>
+                        <label htmlFor='clientAddress'>Address:</label>
+                            <Field name='clientAddress'   />
+                            <ErrorMessage name='clientAddress' />
+
+                        </div>
+            
+            
+
+      
+        </Form>
+
+
+            </Formik>
+    </div>
+    </>
+)
+}  
+    const pickUp=()=>{
+        return(
+            <>
+             <label>Name:</label>
+        <input type='text' />
+        <TimePicker
+  
+  referenceDate={dayjs()}
+/>
+            </>
+        )
+    }
+    const inHouse=()=>{
+        return(
+            <>
+            <p>Lole</p>
+            </>
+        )
+    }
+    //End pickup templates
+
+    //Handle template to show based on delivery Mode
+    const renderDeliveryMode=()=>{
+        if(selectedDelivery=='delivery'){
+            delivery()
+
+        }
+        else if(selectedDelivery=='pickUp'){
+            pickUp()
+
+        }
+        else{
+            inHouse()
+
+        }
+    }
   
 
     return (
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
         <div className='order_button'>
             <button  onClick={()=>{showModal()}}>
             <svg  version="1.1" id="Capa_1" 
@@ -38,7 +182,7 @@ const OrdersList = (props) => {
 </svg>
 
             </button>
-            <p>{props.ordersList.length}</p>
+            <p>{props.ordersList.selectedMenus.length}</p>
             <div className='orders'>
 
 <Modal
@@ -68,30 +212,57 @@ const OrdersList = (props) => {
     <hr />
     <div>
         <table className='orders_t'>
+            <thead>
             <tr>
                 <th>Menu Name</th>
-                <th></th>
+                <th>Qty.</th>
                 <th>£</th>
 
             </tr>
+        </thead>
+        <tbody>
 
        
         {
-            props.ordersList.map((orderItem, index) => {
+            props.ordersList.selectedMenus.map((orderItem, index) => {
                return(
-                <tr>
+                <tr key={index}>
                 <td>{orderItem.name}</td>
-                <td><input type='number'  min={1} max={orderItem.max} step={1}/></td>
-                <td>{orderItem.price}</td>
+                <td><input type='number'  min={1} max={orderItem.max} step={1} onChange={(e)=>{newLineTotal(e.target.value,orderItem.price,index)}} /></td>
+                <td>{Number(props.ordersList.lineTotal[index]).toFixed(2)}</td>
                 </tr>
                )
             })
         }
+        </tbody>
          </table>
-         <div className='total_order'>
-            <p>Total: <span></span></p>
+         <hr />
+         <div>
+            <FormControl>
+                <FormLabel>Delivery Options</FormLabel>
+                <RadioGroup
+                row 
+                value={selectedDelivery}
+                onChange={handleDeliveryChanged}
+                >
+                    <FormControlLabel value="inHouse" control={<Radio />} label="In House"/>
+                    <FormControlLabel value="pickup" control={<Radio />} label="Pick Up"/>
+                    <FormControlLabel value="delivery" control={<Radio />} label="Delivery" id='fu'/>
+                </RadioGroup>
+            </FormControl>
+
 
          </div>
+         <div className='deliveryOptions'>
+            {
+            selectedDelivery=="pickup"?pickUp():selectedDelivery=="delivery"?delivery():inHouse()
+            }
+
+         </div>
+         <div className='total_order'>
+            <p>Total (£): <span>{Number(props.ordersList.total).toFixed(2)}</span></p>
+         </div>
+         
 
     </div>
   </Box>
@@ -100,6 +271,7 @@ const OrdersList = (props) => {
 
             </div>
         </div>
+         </LocalizationProvider>
     );
 }
 
