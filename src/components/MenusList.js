@@ -16,6 +16,8 @@ export default function MenusList() {
         deliveryType:'',
 
     });
+
+   
     //new code
     const lineTotal=(price,qty)=>{
         console.log("updating line Total",price*qty)
@@ -514,6 +516,16 @@ export default function MenusList() {
        
         
     ]
+    const [filter, setfilter] = useState(menuList);
+    //filters Code//
+    const selectedfilter=(menu)=>{
+        
+           menu=='All'?setfilter(menuList):setfilter(menuList.filter((menuItem)=>menuItem.menu_category==menu))
+        
+       
+      
+    }
+    //End Filters Code
 
 
   return (
@@ -532,19 +544,19 @@ export default function MenusList() {
       </div>
                 <h5>Filters</h5>
             <div className='filter-buttons'>
-                <button>
+                <button onClick={()=>selectedfilter('All')}>
                     All
                 </button>
-                <button>
+                <button onClick={()=>selectedfilter('breakfast')}>
                    Breakfast
                 </button>
-                <button>
+                <button onClick={()=>selectedfilter('brunch')}>
                     Brunch
                 </button>
-                <button>
+                <button onClick={()=>selectedfilter('special')}>
                     Chef's Special
                 </button>
-                <button>
+                <button onClick={()=>selectedfilter('drinks')}>
                     Juices/Milk and Wine
                 </button>
 
@@ -553,7 +565,7 @@ export default function MenusList() {
             </div>
         <div className='menus menu-pg'>
         {
-            menuList.map((menu,index)=>{
+            filter.map((menu,index)=>{
                return( 
                 
                       <div className='menu_card-3 ' key={index}>
