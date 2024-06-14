@@ -76,7 +76,7 @@ export default function MenusList() {
             qty:1,
             max:10,
             menu_category:'breakfast',
-            options:'',
+            options:['Palmnut Soup','Groundnut Soup','Light Soup'],
             proteins:[{
                 proteinName:'Fish',
                 Price:5.00
@@ -89,8 +89,8 @@ export default function MenusList() {
         
     },
            {id:2, 
-            name:'Small portion of English breakfast   ',
-            options:'Serve with bacon, sausage, Black pudding, mushroom eggs and beans',
+            name:'Small portion of English breakfast £6.60  Serve with bacon, sausage, Black pudding, mushroom eggs and beans',
+            options:['Palmnut Soup','Groundnut Soup'],
             price:6.60,
             qty:1,
             max:3,
@@ -106,8 +106,8 @@ export default function MenusList() {
         ]
         },
         {id:3, 
-            name:'Small portion of English breakfast ',
-            options:' Serve with bacon, sausage, Black pudding, mushroom eggs and beans',
+            name:'Small portion of English breakfast £6.60  Serve with bacon, sausage, Black pudding, mushroom eggs and beans',
+            options:['Palmnut Soup','Groundnut Soup'],
             price:6.60,
             qty:1,
             max:3,
@@ -122,8 +122,8 @@ export default function MenusList() {
             }
         ]
         },{id:4, 
-            name:'Egg Benedict Canadian bacon ',
-            options:'serve on toasted English muffin, poached eggs and French hollandaise sauce  ',
+            name:'Egg Benedict Canadian bacon serve on toasted English muffin, poached eggs and French hollandaise sauce  ',
+            options:['Palmnut Soup','Groundnut Soup'],
             price:10.00,
             qty:1,
             max:3,
@@ -138,8 +138,8 @@ export default function MenusList() {
             }
         ]
         },{id:5, 
-            name:'Egg royal Smoke salmon ',
-            options:'serve on toasted English muffin with butter sauce ',
+            name:'Egg royal Smoke salmon serve on toasted English muffin with butter sauce ',
+            options:['Palmnut Soup','Groundnut Soup'],
             price:7.50,
             qty:1,
             max:3,
@@ -154,8 +154,8 @@ export default function MenusList() {
             }
         ]
         },{id:6, 
-            name:'Poached eggs or scrambled eggs  ',
-            options:'Serve on a bed of wholemeal toast',
+            name:'Poached eggs or scrambled eggs Serve on a bed of wholemeal toast ',
+            options:['Palmnut Soup','Groundnut Soup'],
             price:7.50,
             qty:1,
             max:3,
@@ -171,7 +171,7 @@ export default function MenusList() {
         ]
         },{id:7, 
             name:'Smoke mackerel salad with horseradish mayo ',
-            options:'',
+            options:['Palmnut Soup','Groundnut Soup'],
             price:10.50,
             qty:1,
             max:3,
@@ -187,9 +187,9 @@ export default function MenusList() {
         ]
         }
         ,
-        {id:8, 
+        {id:9, 
             name:'Sausage on mush with caramelised onion jus and  carrots',
-            options:'',
+            options:['Palmnut Soup','Groundnut Soup'],
             price:11.00,
             qty:1,
             max:3,
@@ -207,7 +207,7 @@ export default function MenusList() {
         ,
         {id:9, 
             name:'Cajun chicken salad with rosemary dressing ',
-            options:'',
+            options:['Palmnut Soup','Groundnut Soup'],
             price:9.50,
             qty:1,
             max:3,
@@ -223,9 +223,9 @@ export default function MenusList() {
         ]
         }
         ,
-        {id:10, 
+        {id:9, 
             name:'Lite bites smashed avocado with smoke salmon on toast ',
-            options:'',
+            options:['Palmnut Soup','Groundnut Soup'],
             price:9.50,
             qty:1,
             max:3,
@@ -241,9 +241,9 @@ export default function MenusList() {
         ]
         }
         ,
-        {id:11, 
+        {id:9, 
             name:'Brie bacon and cranberry ciabatta ',
-            options:'',
+            options:['Palmnut Soup','Groundnut Soup'],
             price:8.50,
             qty:1,
             max:3,
@@ -259,9 +259,9 @@ export default function MenusList() {
         ]
         }
         ,
-        {id:12, 
+        {id:9, 
             name:'Halloumi lettuce and tomato ciabatta ',
-            options:'',
+            options:['Palmnut Soup','Groundnut Soup'],
             price:8.50,
             qty:1,
             max:3,
@@ -277,9 +277,9 @@ export default function MenusList() {
         ]
         }
         ,
-        {id:13, 
+        {id:9, 
             name:'Goat cheese and caramelised onion tart ',
-            options:'',
+            options:['Palmnut Soup','Groundnut Soup'],
             price:8.00,
             qty:1,
             max:3,
@@ -295,9 +295,9 @@ export default function MenusList() {
         ]
         }
         ,
-        {id:14, 
+        {id:9, 
             name:'Chicken kebab wrap, salad and potato wedges ',
-            options:'',
+            options:['Palmnut Soup','Groundnut Soup'],
             price:8.00,
             qty:1,
             max:3,
@@ -313,9 +313,9 @@ export default function MenusList() {
         ]
         }
         ,
-        {id:15, 
+        {id:9, 
             name:'Roasted vegetable with pesto ciabatta ',
-            options:'',
+            options:['Palmnut Soup','Groundnut Soup'],
             price:8.50,
             qty:1,
             max:3,
@@ -331,9 +331,9 @@ export default function MenusList() {
         ]
         }
         ,
-        {id:16, 
+        {id:9, 
             name:'Seafood Linguine in white wine ',
-            options:'',
+            options:['Palmnut Soup','Groundnut Soup'],
             price:16.50,
             qty:1,
             max:3,
@@ -349,9 +349,9 @@ export default function MenusList() {
         ]
         }
         ,
-        {id:17, 
+        {id:9, 
             name:'Turkish menemen spice vegetable in a chilli tomato sauce serve with egg, salad and warm ciabatta ',
-            options:'',
+            options:['Palmnut Soup','Groundnut Soup'],
             price:15.00,
             qty:1,
             max:3,
@@ -367,9 +367,9 @@ export default function MenusList() {
         ]
         }
         ,
-        {id:18, 
+        {id:9, 
             name:'Orange Juice',
-            options:'',
+            options:['Palmnut Soup','Groundnut Soup'],
             price:11.00,
             qty:1,
             max:3,
@@ -385,9 +385,9 @@ export default function MenusList() {
         ]
         }
         ,
-        {id:19, 
+        {id:9, 
             name:'Mango juice',
-            options:'',
+            options:['Palmnut Soup','Groundnut Soup'],
             price:11.00,
             qty:1,
             max:3,
@@ -403,9 +403,9 @@ export default function MenusList() {
         ]
         }
         ,
-        {id:20, 
+        {id:9, 
             name:'Apple juice',
-            options:'',
+            options:['Palmnut Soup','Groundnut Soup'],
             price:11.00,
             qty:1,
             max:3,
@@ -421,9 +421,9 @@ export default function MenusList() {
         ]
         }
         ,
-        {id:21, 
+        {id:9, 
             name:'Crumble Juice',
-            options:'',
+            options:['Palmnut Soup','Groundnut Soup'],
             price:11.00,
             qty:1,
             max:3,
@@ -439,9 +439,9 @@ export default function MenusList() {
         ]
         }
         ,
-        {id:22, 
+        {id:9, 
             name:'Tomato Juice',
-            options:'',
+            options:['Palmnut Soup','Groundnut Soup'],
             price:11.00,
             qty:1,
             max:3,
@@ -457,9 +457,9 @@ export default function MenusList() {
         ]
         }
         ,
-        {id:23, 
+        {id:9, 
             name:'Glass of milk',
-            options:'',
+            options:['Palmnut Soup','Groundnut Soup'],
             price:11.00,
             qty:1,
             max:3,
@@ -475,9 +475,9 @@ export default function MenusList() {
         ]
         }
         ,
-        {id:24, 
+        {id:9, 
             name:'Red Wine',
-            options:'',
+            options:['Palmnut Soup','Groundnut Soup'],
             price:11.00,
             qty:1,
             max:3,
@@ -493,9 +493,9 @@ export default function MenusList() {
         ]
         }
         ,
-        {id:25, 
+        {id:9, 
             name:'White Wine',
-            options:'',
+            options:['Palmnut Soup','Groundnut Soup'],
             price:11.00,
             qty:1,
             max:3,
@@ -518,18 +518,8 @@ export default function MenusList() {
 
   return (
     <div className='mg-t-1'>
-      
           
           <div className='filter-container'>
-          <div className="header ht1">
-        <h1>
-          Our Menu
-        </h1>
-        <p>
-        Making every bite a symphony of flavors
-        </p>
-        <hr/>
-      </div>
                 <h5>Filters</h5>
             <div className='filter-buttons'>
                 <button>
@@ -556,27 +546,18 @@ export default function MenusList() {
             menuList.map((menu,index)=>{
                return( 
                 
-                      <div className='menu_card-3 ' key={index}>
-                        <div className='description'>
+                      <div className='menu_card ' key={index}>
                 <div className='menu_img'>
                     <img src={burger} alt='burger Image' />
+
                 </div>
                 <div className='menu_desc'>
                   <p className='menu_name'>{menu.name}</p>
-                  </div>
-                  </div>
-                  <div className='option_details'>
-                  <p>{menu.options}</p>
-             
+                  <p >£ <span className='price'>{Number(menu.price).toFixed(2)}</span></p>
+                  <p className='default-btn' ><button onClick={()=>addOrder(menu)}>Add to Orders</button></p>
                   
-                  </div>
-                  <div className='buy-container'>  
-                       <p >£ <span className='price'>{Number(menu.price).toFixed(2)}</span></p>
-                    <p className='default-btn' ><button onClick={()=>addOrder(menu)}>Buy</button></p>
 
-                  </div>
-
-                
+                </div>
 
               </div>
 

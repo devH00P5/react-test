@@ -14,7 +14,6 @@ import burger from '../imgs/136168132_3c42feb1-9d73-4c03-bcdd-a496e59f4994 (1).p
 import pizza from '../imgs/136529089_a1e4374c-e98e-4b15-a9ec-a2fe7fc511b9.png';
 import foodItem from '../imgs/burger_8648590.png';
 import Services from './Services';
-import MenusList from './MenusList';
 
 
 
@@ -154,8 +153,7 @@ useGSAP(()=>{
 
 
     </div>
-    {/*< Services />*/}
-    <MenusList />
+    <Services />
     </>
   )
 }
