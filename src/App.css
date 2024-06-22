@@ -214,6 +214,27 @@ button {
   border: none;
 }
 
+.note {
+  margin-top: 0.25rem;
+  margin-bottom: 0.3rem;
+}
+@media screen and (max-width: 540px) {
+  .note {
+    font-size: 0.75rem;
+    color: red;
+    text-align: center;
+  }
+}
+
+.pay {
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  background-color: #EAB631;
+}
+
 .book_a_table {
   background-color: #EAB631;
   font-weight: 700;
@@ -297,6 +318,39 @@ button {
 }
 .orders_t label span {
   color: red !important;
+}
+
+.orders_container {
+  max-height: 50dvh;
+  overflow: scroll;
+}
+
+.cartItem-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow: 1px 1px 2px rgb(234, 234, 234);
+  padding: 0.5rem;
+}
+.cartItem-card .item-name {
+  font-size: 0.8rem;
+}
+.cartItem-card .item-name span {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.cartItem-card .actions {
+  display: flex;
+  justify-content: space-between;
+}
+.cartItem-card .actions button {
+  font-size: 0.7rem;
+  padding: 0.5rem 0.8rem;
+}
+
+.qty-stepper {
+  display: flex;
+  gap: 0.5rem;
 }
 
 .total_order {
@@ -689,7 +743,6 @@ button {
   margin-right: auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 2fr;
   width: 98%;
   padding: 0.5rem;
   box-shadow: 1px 1px 2px #c3c3c3;
@@ -711,6 +764,10 @@ button {
     font-size: 0.8rem;
   }
 }
+.menu_card-3 .desc_center {
+  grid-row: 1/span 2;
+  align-self: center;
+}
 .menu_card-3 .option_details {
   grid-column: 1/span 2;
   grid-row: 2;
@@ -720,17 +777,23 @@ button {
     font-size: 0.7rem;
   }
 }
+.menu_card-3 .opt_none {
+  display: none;
+}
 .menu_card-3 .buy-container {
   grid-column: 3;
   grid-row: 1/span 2;
   align-self: center;
-  text-align: center;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 .menu_card-3 .buy-container .price {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 .menu_card-3 .buy-container .default-btn button {
-  padding: 0.4rem 1rem;
+  padding: 0.2rem 1rem;
   background: #EAB631;
   color: #01462A;
   box-shadow: 1px 1px 2px #bebebe;
