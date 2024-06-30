@@ -154,8 +154,8 @@ useGSAP(()=>{
 
 
     </div>
-    {/*< Services />*/}
-    <MenusList />
+    {/*< Services />
+    <MenusList />*/}
     </>
   )
 }

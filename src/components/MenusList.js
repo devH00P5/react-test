@@ -429,7 +429,7 @@ export default function MenusList() {
             price:11.00,
             qty:1,
             max:3,
-            menu_category:'drinks',
+            menu_category:'Juice',
             proteins:[{
                 proteinName:'Fish',
                 Price:5.00
@@ -447,7 +447,7 @@ export default function MenusList() {
             price:11.00,
             qty:1,
             max:3,
-            menu_category:'drinks',
+            menu_category:'Juice',
             proteins:[{
                 proteinName:'Fish',
                 Price:5.00
@@ -465,7 +465,7 @@ export default function MenusList() {
             price:11.00,
             qty:1,
             max:3,
-            menu_category:'drinks',
+            menu_category:'Juice',
             proteins:[{
                 proteinName:'Fish',
                 Price:5.00
@@ -537,7 +537,7 @@ export default function MenusList() {
             price:11.00,
             qty:1,
             max:3,
-            menu_category:'drinks',
+            menu_category:'Wine',
             proteins:[{
                 proteinName:'Fish',
                 Price:5.00
@@ -555,7 +555,7 @@ export default function MenusList() {
             price:11.00,
             qty:1,
             max:3,
-            menu_category:'drinks',
+            menu_category:'Wine',
             proteins:[{
                 proteinName:'Fish',
                 Price:5.00
@@ -611,8 +611,14 @@ export default function MenusList() {
                 <button onClick={()=>selectedfilter('special')}>
                     Chef's Special
                 </button>
-                <button onClick={()=>selectedfilter('drinks')}>
-                    Juices/Milk and Wine
+                <button onClick={()=>selectedfilter('Juices')}>
+                    Juices
+                </button>
+                <button onClick={()=>selectedfilter('Milk')}>
+                    Milk 
+                </button>
+                <button onClick={()=>selectedfilter('Wine')}>
+                    Wine
                 </button>
 
             </div>

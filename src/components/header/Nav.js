@@ -1,6 +1,7 @@
 import React from 'react'
 import BookTableButton from '../Buttons/BookTableButton'
 import {Link, useLocation, useNavigate} from 'react-router-dom'
+import MenuButton from '../Buttons/MenuButton';
 
 export default function Nav () {
   const navigate=useNavigate();
@@ -28,9 +29,9 @@ export default function Nav () {
       </ul>
 
     </div>
-
             </div>
-           <Link to='reservation'> <BookTableButton/></Link>
+           {/*<Link to='reservation'> <BookTableButton/></Link>*/}
+           <Link to='menu'> <MenuButton/></Link>
 
            
 
