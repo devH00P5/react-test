@@ -90,6 +90,13 @@
     font-size: 1.05rem;
   }
 }
+.hero_description .hero_message svg {
+  width: 100%;
+}
+.hero_description .hero_message a button {
+  color: #EAB631;
+  background: #01462A;
+}
 
 .hero_slider {
   width: 80%;
@@ -749,6 +756,13 @@ button {
 }
 .menu_card-3 .menu_img {
   display: none;
+}
+.menu_card-3 .afro_img {
+  height: 3rem;
+}
+.menu_card-3 .afro_img img {
+  height: inherit;
+  width: auto;
 }
 .menu_card-3 .description {
   grid-column: 1/span 2;

@@ -87,6 +87,16 @@ $default-font-grey:#4e4e4e;
             font-size: 1.05rem;
             
         }
+        svg{
+            width: 100%;
+        }
+        a{
+           button{
+            color: $secondary-theme-color;
+            background: $primary-theme-color;
+        }  
+        }
+       
     }
 }
 .hero_slider{
@@ -868,6 +878,15 @@ button{
     
     .menu_img{
         display: none;
+    }
+    .afro_img{
+        height: 3rem;
+        //text-align: center;
+        img{
+            height: inherit;
+            width: auto;
+        }
+
     }
     .description{
         grid-column: 1 / span 2;

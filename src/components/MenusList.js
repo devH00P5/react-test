@@ -611,7 +611,7 @@ export default function MenusList() {
                 <button onClick={()=>selectedfilter('special')}>
                     Chef's Special
                 </button>
-                <button onClick={()=>selectedfilter('Juices')}>
+                <button onClick={()=>selectedfilter('Juice')}>
                     Juices
                 </button>
                 <button onClick={()=>selectedfilter('Milk')}>

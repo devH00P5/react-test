@@ -1,4 +1,5 @@
 import './App.css';
+import Afro_weekendMenu from './components/Afro_weekendMenu';
 import BookTable from './components/BookTable';
 import Home from './components/Home';
 import MenusList from './components/MenusList';
@@ -18,8 +19,7 @@ function App() {
           <Route path='/react-test' element={<Home/>} />
           <Route path='/reservation' element={<BookTable/>} />
           <Route path='/menu' element={<MenusList/>} />
-          
-
+          <Route path='/afroweekend' element={<Afro_weekendMenu/>} />
 
         </Routes>
       
