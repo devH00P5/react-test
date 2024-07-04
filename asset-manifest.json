@@ -1,14 +1,21 @@
 {
   "files": {
-    "main.css": "/react-test/static/css/main.fec4a341.css",
-    "main.js": "/react-test/static/js/main.7caf654e.js",
+    "main.css": "/react-test/static/css/main.71ed66e3.css",
+    "main.js": "/react-test/static/js/main.47b746d9.js",
     "static/js/453.584e3e5b.chunk.js": "/react-test/static/js/453.584e3e5b.chunk.js",
     "static/media/wave.png": "/react-test/static/media/wave.73cc80b9d9dbe89bcc89.png",
     "static/media/chef.png": "/react-test/static/media/chef.0067f1c1372956c14652.png",
     "static/media/restaurant_bg_hero.jpeg": "/react-test/static/media/restaurant_bg_hero.b40f3b63ca373c824ab0.jpeg",
     "static/media/restaurant_bg_hero.jpg": "/react-test/static/media/restaurant_bg_hero.6934cbe19e448c3b7bf6.jpg",
+    "static/media/TZ.png": "/react-test/static/media/TZ.9cacbda8a2d50259a4e8.png",
     "static/media/136168132_3c42feb1-9d73-4c03-bcdd-a496e59f4994 (1).png": "/react-test/static/media/136168132_3c42feb1-9d73-4c03-bcdd-a496e59f4994 (1).c5db963db775c4e5207f.png",
+    "static/media/jollof.png": "/react-test/static/media/jollof.c5db963db775c4e5207f.png",
+    "static/media/red_red.png": "/react-test/static/media/red_red.5a36c59b7b38251e73f5.png",
+    "static/media/fufu.png": "/react-test/static/media/fufu.9c10623a8cf3bf8b5d03.png",
+    "static/media/waakye.png": "/react-test/static/media/waakye.8d7b7d6d6ee3c6e55a4e.png",
     "static/media/burger_8648590.png": "/react-test/static/media/burger_8648590.eb9c3b60c64b4e0b2724.png",
+    "static/media/tuo.png": "/react-test/static/media/tuo.a5a761178f3b075e8729.png",
+    "static/media/fried_yam.png": "/react-test/static/media/fried_yam.eda893722e5459f0c9a1.png",
     "static/media/136529089_a1e4374c-e98e-4b15-a9ec-a2fe7fc511b9.png": "/react-test/static/media/136529089_a1e4374c-e98e-4b15-a9ec-a2fe7fc511b9.785efb61467459c6970a.png",
     "static/media/logo.png": "/react-test/static/media/logo.133d3bccf29eee68d2eb.png",
     "static/media/slick.svg": "/react-test/static/media/slick.2630a3e3eab21c607e21.svg",
@@ -16,12 +23,12 @@
     "static/media/slick.ttf": "/react-test/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/react-test/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/react-test/index.html",
-    "main.fec4a341.css.map": "/react-test/static/css/main.fec4a341.css.map",
-    "main.7caf654e.js.map": "/react-test/static/js/main.7caf654e.js.map",
+    "main.71ed66e3.css.map": "/react-test/static/css/main.71ed66e3.css.map",
+    "main.47b746d9.js.map": "/react-test/static/js/main.47b746d9.js.map",
     "453.584e3e5b.chunk.js.map": "/react-test/static/js/453.584e3e5b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fec4a341.css",
-    "static/js/main.7caf654e.js"
+    "static/css/main.71ed66e3.css",
+    "static/js/main.47b746d9.js"
   ]
 }
