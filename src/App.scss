@@ -1108,3 +1108,44 @@ label{
     }
     
 }
+@keyframes afro_bg_anime {
+    0%{
+        background: linear-gradient(90deg, rgba(2,96,58,1) 0%, rgba(0,82,48,1) 55%, rgb(0, 131, 78) 100%);
+    }
+    50%{
+        background: linear-gradient(135deg, rgba(2,96,58,1) 0%, rgba(0,82,48,1) 55%, rgb(0, 98, 59) 100%);
+    }
+    100%{
+        background: linear-gradient(180deg, rgba(2,96,58,1) 0%, rgba(0,82,48,1) 55%, rgb(0, 131, 78) 100%);
+    }
+    
+}
+
+.afroweekend_ad{
+    position: absolute;
+    top: 4rem;
+    z-index: 1043;
+    width: 100%;
+    //background: #fff;
+    display: flex;
+    padding: .5rem;
+    justify-content: space-between;
+    align-items: center;
+    //background: $primary-theme-color;
+    background: linear-gradient(90deg, rgba(2,96,58,1) 0%, rgba(0,82,48,1) 55%, rgb(0, 131, 78) 100%);
+    animation: afro_bg_anime 2s alternate infinite ease-in-out ;
+    a{
+        button{
+            padding: .5rem .7rem;
+            background: $secondary-theme-color;
+            color: $primary-theme-color;
+            
+        }
+    }
+    svg{
+        display: block;
+        height: inherit;
+        width: 150px;
+    }
+
+}

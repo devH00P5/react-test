@@ -961,4 +961,37 @@ label {
     transform: translateY(5px);
     fill: #fff;
   }
+}
+@keyframes afro_bg_anime {
+  0% {
+    background: linear-gradient(90deg, rgb(2, 96, 58) 0%, rgb(0, 82, 48) 55%, rgb(0, 131, 78) 100%);
+  }
+  50% {
+    background: linear-gradient(135deg, rgb(2, 96, 58) 0%, rgb(0, 82, 48) 55%, rgb(0, 98, 59) 100%);
+  }
+  100% {
+    background: linear-gradient(180deg, rgb(2, 96, 58) 0%, rgb(0, 82, 48) 55%, rgb(0, 131, 78) 100%);
+  }
+}
+.afroweekend_ad {
+  position: absolute;
+  top: 4rem;
+  z-index: 1043;
+  width: 100%;
+  display: flex;
+  padding: 0.5rem;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, rgb(2, 96, 58) 0%, rgb(0, 82, 48) 55%, rgb(0, 131, 78) 100%);
+  animation: afro_bg_anime 2s alternate infinite ease-in-out;
+}
+.afroweekend_ad a button {
+  padding: 0.5rem 0.7rem;
+  background: #EAB631;
+  color: #01462A;
+}
+.afroweekend_ad svg {
+  display: block;
+  height: inherit;
+  width: 150px;
 }/*# sourceMappingURL=App.css.map */
