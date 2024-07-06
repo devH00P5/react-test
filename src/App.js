@@ -8,6 +8,7 @@ import MenusList from './components/MenusList';
 import Nav from './components/header/Nav';
 
 import { BrowserRouter as Router,Link,Routes,Route } from 'react-router-dom';
+import { useEffect } from 'react';
 
 
 function App() {
@@ -30,13 +31,21 @@ function App() {
        deliveryType:'',
 
    });
+      //Pickup 25% calc
+  const [pickupPercent, setpickupPercent] = useState(0.00);
+  //End Pickup Calc
 
+  useEffect(() => {
+    
+   setpickupPercent(.25*ordersTotal)
+  }, [ordersTotal]);
    const updateQty=(qty,index)=>{
        console.log(orders.selectedMenus[index])
        console.log(qty)
        orders.selectedMenus[index].qty=qty;
        console.log(orders.selectedMenus[index].qty)
        setorders({...orders})
+       setpickupPercent(0.25*orders.total)
        console.log(orders.selectedMenus[index])
 
    }
@@ -51,21 +60,21 @@ function App() {
       // setrefresh(!refresh)
        console.log(orders)
        console.log(ordersList)
+       
       setorders({...orders}) 
       
        
      
    }
 
-   //Pickup 25% calc
-  const [pickupPercent, setpickupPercent] = useState(0.25*ordersTotal);
-  //End Pickup Calc
+
 
   
    //new code
    const lineTotal=(price,qty)=>{
        console.log("updating line Total",price*qty)
        orders.lineTotal.push(price*qty)
+   
        setorders({...orders})
    }
 
@@ -78,7 +87,7 @@ function App() {
     }, 0.00)
     setorders({...orders,['total']:newTotal})
     setrefresh(!refresh)
-    setpickupPercent(0.25*orders.total)
+ 
    }
 
    const addOrder=(menu)=>{
@@ -95,6 +104,7 @@ function App() {
             //end
 
             updateTotal()
+            
             console.log('Order-'+ orders.selectedMenus.length)
             console.log('OrdersList-'+ ordersList)
        }
@@ -111,6 +121,7 @@ function App() {
            updateTotal()
            console.log('Order-'+ orders.selectedMenus.length)
            console.log('OrdersList-'+ ordersList)
+           
 
        }
       
@@ -126,6 +137,7 @@ function App() {
         console.log("looking"+orders.lineTotal[index])
         console.log("Total"+orders.total)
         console.log("updating... lineTotal ,"+(qty*price))
+        
         setorders({...orders})   
     }
   
