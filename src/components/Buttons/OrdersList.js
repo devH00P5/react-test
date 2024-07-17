@@ -2,14 +2,75 @@ import { Input } from '@mui/icons-material';
 import dayjs from 'dayjs';
 import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { Box, FormControl, FormControlLabel, FormLabel, Modal, Radio, RadioGroup, Typography } from '@mui/material';
+import { Box, Dialog, DialogContent, DialogTitle, FormControl, FormControlLabel, FormLabel, Modal, Radio, RadioGroup, Typography } from '@mui/material';
 import React ,{useContext, useEffect, useState} from 'react';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { ErrorMessage, Field, Form, Formik } from 'formik'
 import * as Yup from 'yup'
 import CartMenuItem from '../CartMenuItem';
 import { OrdersListContext } from '../../Contexts/OrdersContext';
+import { loadStripe } from '@stripe/stripe-js';
 const OrdersList = (props) => {
+
+    //Stripe integration Code
+   /* const onPayment =async ()=>{
+        const stripeLoad=await loadStripe("pk_test_51PZhtDDhz0qJSGymhbYfOqWzrfrinzcwz8dvYdkyhO8xp5UU5tZA8JzFGUhArkhhDgYOt5cpcuSikoyqEJrIhHjd0000mIOYaD");
+        const body={
+            products:{
+                name:'Hoopx'
+            }
+        }
+        const headers={
+              "Content-Type": "application/json"
+        }
+
+        const response=await fetch(`http://localhost:5252/create-checkout-session`,
+            {
+                method:'POST', 
+                body:JSON.stringify({name:'h00px'}),
+                headers:headers
+               
+            }
+        )
+
+        const session=await response.json()
+        const result= stripeLoad.redirectToCheckout ({
+            sessionId:session.id
+        })
+
+    }*/
+    
+        const onPayment =async (menu,customer_details,mode)=>{
+        const stripeLoad=await loadStripe("pk_test_51PZhtDDhz0qJSGymhbYfOqWzrfrinzcwz8dvYdkyhO8xp5UU5tZA8JzFGUhArkhhDgYOt5cpcuSikoyqEJrIhHjd0000mIOYaD");
+        const body={
+            orderItems:menu,
+            order:customer_details,
+            pickup_status:mode
+        }
+        const headers={
+              "Content-Type": "application/json"
+        }
+
+        const response=await fetch(`http://localhost:5252/create-checkout-session`,
+            {
+                method:'POST', 
+                headers:headers,
+                body:JSON.stringify(body)
+               
+            }
+        )
+
+        const session=await response.json()
+        const result= stripeLoad.redirectToCheckout ({
+            sessionId:session.id
+        })
+
+    }
+
+    //End stripe Integration Code
+
+
+
 
 const {orders,updateTotal,lineTotal,removeOrderItem,newLineTotal,orderQuantity,ordersTotal}=useContext(OrdersListContext);
 
@@ -18,7 +79,7 @@ const [temp, settemp] = useState(true);
 const [modalDisplay, setmodalDisplay] = useState(false);
    
  //Delivery Mode
- const [selectedDelivery, setselectedDelivery] = useState('pickup')
+ const [selectedDelivery, setselectedDelivery] = useState('PICKUP')
  
  const handleDeliveryChanged=(e)=>{
     setselectedDelivery(e.target.value)
@@ -54,10 +115,11 @@ const [modalDisplay, setmodalDisplay] = useState(false);
     const pickUp=()=>{
         return(
             <>
+             <button type='submit' className='pay'>Pay (£): {Number(ordersTotal).toFixed(2)} </button>
 
-<p className='note'>Please note that a payment of 25% would have to be made for your order to be processed</p>
+{/*<p className='note'>Please note that a payment of 25% would have to be made for your order to be processed</p>
 
-<button type='submit' className='pay'>Pay {Number(props.pickupPercent).toFixed(2)}</button>
+<button type='submit' className='pay'>Pay {Number(props.pickupPercent).toFixed(2)}</button>*/}
             </>
         )
     }
@@ -85,6 +147,8 @@ const [modalDisplay, setmodalDisplay] = useState(false);
 
         }
     }
+    //dialog
+    const [scroll, setScroll] = React.useState('paper');
   
 
     return (
@@ -115,33 +179,23 @@ const [modalDisplay, setmodalDisplay] = useState(false);
             <p>{orders.selectedMenus.length}</p>
             <div className='orders'>
 
-<Modal
+<Dialog
 style={{overflow:'scroll'}}
   open={modalDisplay}
   onClose={hideModal}
-  aria-labelledby="modal-modal-title"
-  aria-describedby="modal-modal-description"
+  fullWidth={true}
+  maxWidth='xl'
+  aria-labelledby="scroll-dialog-title"
+  aria-describedby="scroll-dialog-description"
 >
-  <Box sx={
 
- {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: '90%',
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
-    boxShadow: 24,
-    p: 4,
-  }
-
-  }>
-    <Typography id="modal-modal-title" variant="h6" component="h5">
+    <DialogTitle>
+    <Typography id="modal-modal-title" >
       Your orders  
     </Typography>
     <hr />
-  
+  </DialogTitle>
+  <DialogContent>
     <div className='orders_container'>
     {
             orders.selectedMenus.map((orderItem, index) => {
@@ -167,8 +221,8 @@ style={{overflow:'scroll'}}
               onChange={handleDeliveryChanged}
               >
                   
-                  <FormControlLabel  value="pickup" control={<Radio />} label="Pick Up"/>
-                  <FormControlLabel value="delivery" control={<Radio />} label="Delivery" id='fu'/>
+                  <FormControlLabel  value="PICKUP" control={<Radio />} label="Pick Up"/>
+                  <FormControlLabel value="DELIVERY" control={<Radio />} label="Delivery" id='fu'/>
               </RadioGroup>
           </FormControl>
 
@@ -180,60 +234,60 @@ style={{overflow:'scroll'}}
     <Formik initialValues={{
                 postCode:'',
                 clientAddress:'',
-                guestNumber:1,
                 clientName:'',
-                email:'',
                 phone:'',
-                specialRequest:''
+                email:''
+                
 
             }} 
          validationSchema={
                 Yup.object({
-                reservationDate:Yup.date("Please Choose a valid Date for reservation").required('This field is required'),
                 //reservationTime:Yup.time("please choose a valid time for reservation").required("Please choose a time for reservation"),
-                postCode:Yup.string("Please Enter a Number").required("Please Enter Number of Guest"),
-                clientName:Yup.string("Please Enter A Valid Name").required("Name field can't be empty"),
-                clientAddress:Yup.string().required("Please E-mail field can't be empty"),
-                 phone:Yup.number("Please Enter a valid Phone number").required("The Phone field can't be Empty"),
-                specialRequest:Yup.string("")
+                postCode:Yup.string("Please Enter Postcode").required("Postcode is required"),
+                clientName:Yup.string("Please Enter A Valid Name").required("Name is required"),
+                clientAddress:Yup.string().required("Address is required"),
+                 phone:Yup.string("Please Enter a valid Phone number").required("Phone Number is required"),
+                 email: Yup.string().email('Invalid email format').required('Email is required'),
             })}  
             
             
-        onSubmit={(values, { setSubmitting }) => {
-         setTimeout(() => {
-           alert(JSON.stringify(values, null, 2));
-           setSubmitting(false);
-         }, 400);
+        onSubmit={(values) => {
+            onPayment(orders.selectedMenus,values,selectedDelivery)
+
+            //console.log(values,orders)
+            
+        
        }}>
         <Form >
-       
-        
-                     
-    
-        
                         <div className='form-g'>
                         <label htmlFor='clientName'>Name:</label>
                             <Field name='clientName'   />
-                            <ErrorMessage name='clientName' />
+                            <p className='err'><ErrorMessage name='clientName' /></p>
+
+                        </div>
+                        <div className='form-g'>
+                        <label htmlFor='email'>Email:</label>
+                            <Field name='email'   />
+                            <p className='err'> <ErrorMessage name='email' /></p>
 
                         </div>
                         <div className='form-g'>
                             <label htmlFor='phone'>Phone</label>
-                            <Field name='phone' type='number' />
-                            <ErrorMessage name='phone' />
+                            <Field name='phone' />
+                            <p className='err'><ErrorMessage name='phone' /></p>
                             
                         </div>
          
                         <div className='form-g'>
                         <label htmlFor='postCode'>Post Code:</label>
                             <Field name='postCode'   />
-                            <ErrorMessage name='postCode' />
+                            <p className='err'><ErrorMessage name='postCode' /></p>
 
                         </div>
                         <div className='form-g'>
                         <label htmlFor='clientAddress'>Address:</label>
                             <Field name='clientAddress'   />
-                            <ErrorMessage name='clientAddress' />
+                            <p className='err'><ErrorMessage name='clientAddress' /></p>
 
                         </div>
                         <div className='total_order'>
@@ -243,7 +297,7 @@ style={{overflow:'scroll'}}
             
 
                         {
-          selectedDelivery=="pickup"?pickUp():delivery()
+          selectedDelivery=="PICKUP"?pickUp():delivery()
           }
         </Form>
 
@@ -258,13 +312,13 @@ style={{overflow:'scroll'}}
        
 
   </div>
+  </DialogContent>
     
-  </Box>
+  
 
   
-</Modal>
+</Dialog>
      
-
             </div>
         </div>
          </LocalizationProvider>

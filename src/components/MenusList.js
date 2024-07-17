@@ -1,12 +1,43 @@
-import React , { useContext, useState } from 'react'
+import React , { useContext, useState,useEffect } from 'react'
 import burger from '../imgs/burger_8648590.png';
 import OrdersList from './Buttons/OrdersList';
 import { OrdersListContext } from '../Contexts/OrdersContext';
+import axios from 'axios';
+
 
 export default function MenusList() {
 
+
     const {orders,setorders,updateTotal,lineTotal,removeOrderItem,newLineTotal,orderQuantity,ordersTotal,setordersTotal,setorderQuantity,updateQty,addOrder,pickupPercent}=useContext(OrdersListContext);
+    //menu from API
+    const [menus,setMenus] = useState([])
+    const [filter, setfilter] = useState([]);
+    const [menuCategories,setMenuCategories]=useState([])
+    useEffect(() => {
+        axios.get('https://restaurant-service-9ee4.onrender.com/api/v1/foodmenu')
+        .then(function (response) {
+            console.log(response.data)
+            setMenus( response.data)
+            setfilter(response.data)
+        })
+        .catch(function (error) {
+            console.log(error)
+        })
+
+        //Categories
+        axios.get('https://restaurant-service-9ee4.onrender.com/api/v1/category')
+        .then(function (response) {
+            console.log(response.data)
+            setMenuCategories( response.data)
+        })
+        .catch(function (error) {
+            console.log(error)
+        })
+
+
+    }, []);
  
+    //End Menu from API
     //menu
     const menuList=[
         {
@@ -455,14 +486,13 @@ export default function MenusList() {
        
         
     ]
-    const [filter, setfilter] = useState(menuList);
+
+   
+   
     //filters Code//
     const selectedfilter=(menu)=>{
         
-           menu=='All'?setfilter(menuList):setfilter(menuList.filter((menuItem)=>menuItem.menu_category==menu))
-        
-       
-      
+           menu=='All'?setfilter(menus):setfilter(menus.filter((menuItem)=>menuItem.categoryId==menu))
     }
     //End Filters Code
 
@@ -470,10 +500,7 @@ export default function MenusList() {
   return (
 
     <div className='mg-t-1'>
-      
-          
-          <div className='filter-container'>
-          <div className="header ht1">
+             <div className="header ht1">
         <h1>
           Our Menu
         </h1>
@@ -482,40 +509,44 @@ export default function MenusList() {
         </p>
         <hr/>
       </div>
+      
+          
+          <div className='filter-container'>
+     
                 <h5>Filters</h5>
             <div className='filter-buttons'>
                 <button onClick={()=>selectedfilter('All')}>
                     All
                 </button>
-                <button onClick={()=>selectedfilter('breakfast')}>
-                   Breakfast
-                </button>
-                <button onClick={()=>selectedfilter('brunch')}>
-                    Brunch
-                </button>
-                <button onClick={()=>selectedfilter('special')}>
-                    Chef's Special
-                </button>
-                <button onClick={()=>selectedfilter('Juice')}>
-                    Juices
-                </button>
-                <button onClick={()=>selectedfilter('Milk')}>
-                    Milk 
-                </button>
-                <button onClick={()=>selectedfilter('Wine')}>
-                    Wine
-                </button>
 
+                {
+                    menuCategories.length!=0?
+                    menuCategories.map((category,index)=>{
+                        return(  
+                             <button key={index} onClick={()=>selectedfilter(category.id)}>
+                        {category.name}
+                    </button>
+                   )
+                     
+                       
+                    }) :<p></p>
+                }
+                
             </div>
             <hr />
             </div>
         <div className='menus menu-pg'>
+           
         {
-            filter.map((menu,index)=>{
+            
+            
+            filter.map((menu,index)=>{ 
+    
                return( 
+               
                 
                       <div className='menu_card-3'  key={index}>
-                        <div className={menu.options!=''?'description':'description desc_center'} >
+                        <div className={menu.description!=''?'description':'description desc_center'} >
                 <div className='menu_img'>
                     <img src={burger} alt='burger Image' />
                 </div>
@@ -523,8 +554,8 @@ export default function MenusList() {
                   <p className='menu_name'>{menu.name}</p>
                   </div>
                   </div>
-                  <div className={menu.options!=''?'option_details':'opt_none'}>
-                  <p>{menu.options}</p>
+                  <div className={menu.description!=''?'option_details':'opt_none'}>
+                  <p>{menu.description}</p>
              
                   
                   </div>

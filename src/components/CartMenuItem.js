@@ -26,7 +26,7 @@ const [refresh, setrefresh] = useState(false);
 
             </div>
             <div className='stepper'>
-                <QuantityAdjust newLineTotal={props.newLineTotal} price={props.cartItem.price} index={props.index} updateTotal={props.updateTotal} qty={props.cartItem.qty} />
+                <QuantityAdjust newLineTotal={props.newLineTotal} price={props.cartItem.price} index={props.index} updateTotal={props.updateTotal} qty={props.cartItem.quantity} />
                 
             </div>
 

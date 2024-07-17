@@ -9,7 +9,7 @@
 }
 
 .hero_wrapper {
-  height: calc(100dvh - 3.8rem);
+  height: calc(100dvh - 4rem);
   background: rgba(0, 0, 0, 0.7725490196);
   color: #fff;
   position: relative;
@@ -28,6 +28,11 @@
   height: inherit;
   z-index: -1;
 }
+@media screen and (max-width: 520px) {
+  .hero_wrapper {
+    height: calc(100dvh - 2.65rem);
+  }
+}
 
 .hero_content {
   display: flex;
@@ -39,7 +44,7 @@
 }
 @media screen and (max-width: 520px) {
   .hero_content {
-    gap: 1rem;
+    gap: 2rem;
   }
 }
 
@@ -85,17 +90,23 @@
   font-family: "Roboto", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 300;
 }
-@media screen and (max-width: 520px) {
-  .hero_description .hero_message {
-    font-size: 1.05rem;
-  }
-}
 .hero_description .hero_message svg {
   width: 100%;
 }
 .hero_description .hero_message a button {
   color: #EAB631;
   background: #01462A;
+}
+@media screen and (max-width: 520px) {
+  .hero_description .hero_message {
+    font-size: 0.9rem;
+  }
+  .hero_description .hero_message svg {
+    width: 80%;
+  }
+  .hero_description .hero_message a button {
+    padding: 0.5rem 1rem;
+  }
 }
 
 .hero_slider {
@@ -112,7 +123,7 @@
   text-align: center;
 }
 .hero_slider .hero_slide .hero_slide_img {
-  height: 10rem;
+  height: 8rem;
   width: inherit;
   margin-left: auto;
   margin-right: auto;
@@ -160,6 +171,12 @@
   padding-right: 6px;
   background-color: #101010;
 }
+@media screen and (max-width: 520px) {
+  .nav_wrapper {
+    height: 2.65rem;
+    padding: 0 12px;
+  }
+}
 
 .top_nav {
   display: flex;
@@ -180,13 +197,15 @@
   background-color: rgba(0, 0, 0, 0.958);
   left: -20%;
   bottom: 0;
-  z-index: 1031;
+  z-index: 1044;
   transition: 1s ease;
 }
 @media screen and (max-width: 540px) {
   .top_nav .drawer-b {
     left: -100%;
     width: 100%;
+    z-index: 1053;
+    height: calc(100dvh - 2.65rem);
   }
 }
 .top_nav .drawer-b ul {
@@ -212,7 +231,12 @@
   width: 40px;
   stroke-width: 3;
   stroke: #fff;
-  animation: updown alternate 2s;
+}
+@media screen and (max-width: 520px) {
+  .top_nav svg {
+    height: 20px;
+    width: 25px;
+  }
 }
 
 button {
@@ -253,6 +277,12 @@ button {
   background-color: #01462A;
   color: #fff;
   cursor: pointer;
+}
+@media screen and (max-width: 520px) {
+  .book_a_table {
+    padding: 0.4rem 0.7rem;
+    font-weight: 500;
+  }
 }
 
 .order_button {
@@ -372,10 +402,22 @@ button {
     font-size: 0.8rem;
   }
 }
+.deliveryOptions input {
+  outline: none !important;
+}
+.deliveryOptions input:hover, .deliveryOptions input:focus {
+  border: 1px solid rgb(130, 174, 255) !important;
+}
 @media screen and (max-width: 520px) {
   .deliveryOptions input {
     width: 100%;
     height: 1.5rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .deliveryOptions input {
+    width: 100%;
+    height: 2rem;
   }
 }
 
@@ -424,7 +466,7 @@ button {
 
 .ht1 {
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 1rem;
 }
 @media screen and (max-width: 540px) {
   .ht1 {
@@ -437,15 +479,34 @@ button {
   margin-right: auto;
 }
 .ht1 h1 {
-  font-size: 4rem;
+  font-size: 2.5rem;
   text-align: center;
   color: #01462A;
 }
 @media screen and (max-width: 540px) {
   .ht1 h1 {
-    font-size: 2.5rem;
+    font-size: 1.9rem;
   }
 }
+@media screen and (max-width: 935px) and (orientation: landscape) {
+  .ht1 h1 {
+    font: 1.2rem;
+  }
+}
+.ht1 p {
+  font-size: 0.9rem;
+}
+@media screen and (max-width: 540px) {
+  .ht1 p {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 540px) and (max-width: 935px) and (orientation: landscape) {
+  .ht1 p {
+    font-size: 0.7rem;
+  }
+}
+
 .services_content {
   display: flex;
   background-position: left;
@@ -575,13 +636,16 @@ button {
 }
 
 .menus {
-  width: 100%;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   gap: 1rem;
 }
 @media screen and (max-width: 540px) {
   .menus {
     flex-direction: column;
+    width: 100%;
   }
 }
 
@@ -591,7 +655,6 @@ button {
 @media screen and (max-width: 540px) {
   .menu-pg {
     flex-direction: row !important;
-    gap: unset;
     justify-content: space-around;
   }
 }
@@ -600,6 +663,7 @@ button {
     width: calc(50% - 1rem);
   }
   .menu-pg .menu_card .menu_desc .default-btn button {
+    cursor: pointer !important;
     font-size: 0.7rem;
   }
   .menu-pg .menu_card .menu_desc .menu_name {
@@ -752,7 +816,7 @@ button {
   grid-template-columns: 1fr 1fr 1fr;
   width: 98%;
   padding: 0.5rem;
-  box-shadow: 1px 1px 2px #c3c3c3;
+  box-shadow: 1px 1px 2px #f6f6f6;
 }
 .menu_card-3 .menu_img {
   display: none;
@@ -778,6 +842,11 @@ button {
     font-size: 0.8rem;
   }
 }
+@media screen and (max-width: 935px) and (orientation: landscape) {
+  .menu_card-3 .description .menu_name {
+    font-size: 0.9rem;
+  }
+}
 .menu_card-3 .desc_center {
   grid-row: 1/span 2;
   align-self: center;
@@ -787,6 +856,11 @@ button {
   grid-row: 2;
 }
 @media screen and (max-width: 520px) {
+  .menu_card-3 .option_details p {
+    font-size: 0.7rem;
+  }
+}
+@media screen and (max-width: 935px) and (orientation: landscape) {
   .menu_card-3 .option_details p {
     font-size: 0.7rem;
   }
@@ -806,7 +880,13 @@ button {
 .menu_card-3 .buy-container .price {
   font-size: 1.2rem;
 }
+@media screen and (max-width: 520px) {
+  .menu_card-3 .buy-container .price {
+    font-size: 1rem;
+  }
+}
 .menu_card-3 .buy-container .default-btn button {
+  cursor: pointer;
   padding: 0.2rem 1rem;
   background: #EAB631;
   color: #01462A;
@@ -913,7 +993,7 @@ label {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  width: 100%;
+  width: 90%;
   padding-top: 1rem;
   margin-left: auto;
   margin-right: auto;
@@ -927,6 +1007,12 @@ label {
     width: 100%;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+  }
+}
+@media screen and (max-width: 935px) and (orientation: landscape) {
+  .filter-container {
+    width: 95%;
+    top: 3.15rem;
   }
 }
 .filter-container hr {
@@ -955,6 +1041,12 @@ label {
     padding: 0.5rem;
   }
 }
+@media screen and (max-width: 935px) and (orientation: landscape) {
+  .filter-buttons button {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+}
 
 @keyframes updown {
   to {
@@ -976,7 +1068,7 @@ label {
 .afroweekend_ad {
   position: absolute;
   top: 4rem;
-  z-index: 1043;
+  z-index: 1;
   width: 100%;
   display: flex;
   padding: 0.5rem;
@@ -994,4 +1086,21 @@ label {
   display: block;
   height: inherit;
   width: 150px;
+}
+@media screen and (max-width: 520px) {
+  .afroweekend_ad {
+    top: 2.65rem;
+  }
+}
+
+.afwkend {
+  position: sticky;
+  top: 1.65rem;
+  background: #fff !important;
+  padding-top: 1rem;
+}
+
+.err {
+  font-size: 0.7rem;
+  color: red;
 }/*# sourceMappingURL=App.css.map */

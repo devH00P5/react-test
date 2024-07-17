@@ -9,6 +9,8 @@ import Nav from './components/header/Nav';
 
 import { BrowserRouter as Router,Link,Routes,Route } from 'react-router-dom';
 import { useEffect } from 'react';
+import Success from './components/paymentComponent/Success';
+import Cancel from './components/paymentComponent/Cancel';
 
 
 function App() {
@@ -42,8 +44,8 @@ function App() {
    const updateQty=(qty,index)=>{
        console.log(orders.selectedMenus[index])
        console.log(qty)
-       orders.selectedMenus[index].qty=qty;
-       console.log(orders.selectedMenus[index].qty)
+       orders.selectedMenus[index].quantity=qty;
+       console.log(orders.selectedMenus[index].quantity)
        setorders({...orders})
        setpickupPercent(0.25*orders.total)
        console.log(orders.selectedMenus[index])
@@ -53,7 +55,7 @@ function App() {
    const removeOrderItem=(index)=>{
        console.log("Triggered-are you trying to delete me"+index)
        const menuItem=orders.selectedMenus[index];   
-       setordersTotal(ordersTotal-(menuItem.qty*menuItem.price))
+       setordersTotal(ordersTotal-(menuItem.quantity*menuItem.price))
        updateQty(1,index)
       orders.selectedMenus[index]=1
        const newOrders=orders.selectedMenus.splice(index,1)
@@ -99,7 +101,7 @@ function App() {
             //setorders({...orders,['selectedMenus']:ordersList})
             orders.selectedMenus.push(menu)
             //New
-            lineTotal(menu.price,menu.qty)
+            lineTotal(menu.price,menu.quantity)
             setordersTotal(ordersTotal+menu.price)
             //end
 
@@ -115,7 +117,7 @@ function App() {
            //setordersList((prev)=>[...prev,menu])
            orders.selectedMenus.push(menu)
            //New
-           lineTotal(menu.price,menu.qty)
+           lineTotal(menu.price,menu.quantity)
            setordersTotal(ordersTotal+menu.price)
            //end
            updateTotal()
@@ -131,7 +133,7 @@ function App() {
 
    //LineTotal
    const newLineTotal=(qty,price,index)=>{
-       orders.selectedMenus[index].qty=qty
+       orders.selectedMenus[index].quantity=qty
        lineTotal[index]=(qty*price)
        updateTotal()
         console.log("looking"+orders.lineTotal[index])
@@ -161,6 +163,8 @@ function App() {
           <Route path='/react-test' element={<Home/>} />
           <Route path='/reservation' element={<BookTable/>} />
           <Route path='/menu' element={<MenusList/>} />
+          <Route path='/cancel' element={<Cancel/>} />
+          <Route path='/success' element={<Success/>} />
           <Route path='/afroweekend' element={<Afro_weekendMenu/>} />
           
 

@@ -148,15 +148,13 @@ export default function Afro_weekendMenu() {
   return (
     <div className='mg-t-1'>
       
-          
-    <div className='filter-container'>
-    <div className="header ht1">
+      <div className="header ht1 afwkend">
   <h1>
     Afro Weekend Menu
   </h1>
   <hr/>
-</div>
-      </div>
+</div>    
+ 
   <div className='menus menu-pg'>
   {
       menuList.map((menu,index)=>{
